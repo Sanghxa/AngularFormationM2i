@@ -1,0 +1,16 @@
+<div>
+  <mat-form-field appearance="fill">
+    <mat-label>Nom</mat-label>
+    <input matInput [(ngModel)] = "task.title" placeholder="Ex. Jean-Louis">
+  </mat-form-field>
+
+  <p>{{task.createdDate | date:'dd/MM/yyyy, h:mm'}} </p>
+  <p>{{task.description | apercuDescription:5}} </p>
+  <li [class]="geItemVariant()">La tâche {{ task.title }} est <span [class]="getBadgeVariant()">{{ getStatus() }}</span></li>
+  <button mat-raised-button [color]="getButtonColor()" (click)="toggleStatus()">{{getButtonText()}}</button>
+
+</div>
+
+
+
+
